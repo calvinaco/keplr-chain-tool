@@ -6,7 +6,7 @@ Live version: https://calvinaco.github.io/keplr-chain-tool/
 
 ## Supported Chain
 
-The application is shipped with the quick add button for the following chains;
+The application is shipped with the quick add button for the following chains:
 - Crypto.org Chain Croeseid Testnet
 - Cronos Testnet
 

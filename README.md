@@ -1,4 +1,16 @@
-# Getting Started with Create React App
+# Keplr Chain Tool
+
+Add Cosmos based chain to Keplr browser extension at ease
+
+## Supported Chain
+
+The application is shipped with the quick add button for the following chains;
+- Crypto.org Chain Croeseid Testnet
+- Cronos Testnet
+
+Alternatively, you can add your custom chain by filling the chain information manually
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

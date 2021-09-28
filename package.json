@@ -5,6 +5,7 @@
     "name": "Calvin Lau",
     "url": "https://github.com/calvinaco"
   },
+  "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",

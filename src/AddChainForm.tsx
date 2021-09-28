@@ -76,7 +76,7 @@ function AddChainForm() {
           <Input />
         </Form.Item>
         <Form.Item
-          label="Minimum Denom"
+          label="Minimal Denom"
           name="stakeCurrencyCoinMinimalDenom"
           rules={[{ required: true }]}
         >
@@ -102,7 +102,7 @@ function AddChainForm() {
           <Input />
         </Form.Item>
         <Form.Item
-          label="Minimum Denom"
+          label="Minimal Denom"
           name="currenciesCoinMinimalDenom"
           rules={[{ required: true }]}
         >
@@ -128,7 +128,7 @@ function AddChainForm() {
           <Input />
         </Form.Item>
         <Form.Item
-          label="Minimum Denom"
+          label="Minimal Denom"
           name="feeCurrenciesCoinMinimalDenom"
           rules={[{ required: true }]}
         >

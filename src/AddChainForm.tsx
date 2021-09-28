@@ -1,9 +1,8 @@
 import React from "react";
-import { message, Button, Form, Input, InputNumber, Switch, PageHeader } from "antd";
+import { message, Button, Form, Input, InputNumber, Switch } from "antd";
 import "./AddChainForm.css";
 import { KeplrChainConfig } from "./keplr/types";
 import { addChainToKeplr } from "./keplr/lib";
-import { features } from "process";
 
 function AddChainForm() {
   const [featuresStargate, setFeaturesStargate] = React.useState(true);

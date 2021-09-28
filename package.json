@@ -5,6 +5,7 @@
     "name": "Calvin Lau",
     "url": "https://github.com/calvinaco"
   },
+  "homepage": "./keplr-chain-tool",
   "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",

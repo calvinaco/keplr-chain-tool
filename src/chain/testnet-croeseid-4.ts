@@ -91,4 +91,5 @@ export const Testnet_Croeseid_4: KeplrChainConfig = {
     average: 0.025,
     high: 0.025,
   },
+  features: ["stargate", "ibc-transfer"],
 };

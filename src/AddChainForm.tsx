@@ -1,13 +1,23 @@
 import React from "react";
-import { message, Button, Form, Input, InputNumber } from "antd";
+import { message, Button, Form, Input, InputNumber, Switch, PageHeader } from "antd";
 import "./AddChainForm.css";
 import { KeplrChainConfig } from "./keplr/types";
 import { addChainToKeplr } from "./keplr/lib";
+import { features } from "process";
 
 function AddChainForm() {
+  const [featuresStargate, setFeaturesStargate] = React.useState(true);
+  const [featuresIBC, setFeaturesIBC] = React.useState(true);
+  const [featuresCosmWasm, setFeaturesCosmWasm] = React.useState(false);
+  const [featuresSecretWasm, setFeaturesSecretWasm] = React.useState(false);
   const handleFinish = async (values: any) => {
     console.log(values);
-    const network: KeplrChainConfig = constructKeplrChainConfig(values);
+    const network: KeplrChainConfig = constructKeplrChainConfig(values, {
+      featuresStargate,
+      featuresIBC,
+      featuresCosmWasm,
+      featuresSecretWasm,
+    });
     console.log(network);
     try {
       await addChainToKeplr(network);
@@ -23,7 +33,6 @@ function AddChainForm() {
       wrapperCol={{ span: 18 }}
       initialValues={{ remember: true }}
       onFinish={handleFinish}
-      autoComplete="off"
     >
       <Form.Item
         label="Chain ID"
@@ -220,6 +229,41 @@ function AddChainForm() {
         </Form.Item>
       </Form.Item>
 
+      <Form.Item
+        label="Features"
+      >
+        <Form.Item
+          label="Stargate"
+          name="featuresStargate"
+          valuePropName="checked"
+        >
+          <Switch checked={featuresStargate} onChange={(checked) => setFeaturesStargate(checked)}  />
+        </Form.Item>
+
+        <Form.Item
+          label="IBC"
+          name="featuresIBC"
+          valuePropName="checked"
+        >
+          <Switch checked={featuresIBC} onChange={(checked) => setFeaturesIBC(checked)} />
+        </Form.Item>
+
+        <Form.Item
+          label="CosmWasm"
+          name="featuresCosmWasm"
+        >
+          <Switch checked={featuresCosmWasm} onChange={(checked) => setFeaturesCosmWasm(checked)} />
+        </Form.Item>
+
+        <Form.Item
+          label="Secret NETWORK Wasm"
+          name="featuresSecretWasm"
+          valuePropName="checked"
+        >
+          <Switch checked={featuresSecretWasm} onChange={(checked) => setFeaturesSecretWasm(checked)}  />
+        </Form.Item>
+      </Form.Item>
+
       <Form.Item>
         <Button type="primary" htmlType="submit">
           Add Chain
@@ -229,7 +273,23 @@ function AddChainForm() {
   );
 }
 
-function constructKeplrChainConfig(values: any): KeplrChainConfig {
+function constructKeplrChainConfig(
+  values: any, featuresConfig: FeaturesConfig,
+): KeplrChainConfig {
+  const features = [];
+  if (featuresConfig.featuresStargate) {
+    features.push("stargate");
+  }
+  if (featuresConfig.featuresIBC) {
+    features.push("ibc-transfer");
+  }
+  if (featuresConfig.featuresCosmWasm) {
+    features.push("cosmwasm");
+  }
+  if (featuresConfig.featuresSecretWasm) {
+    features.push("secretwasm");
+  }
+
   return {
     // Chain-id of the Cosmos SDK chain.
     chainId: values.chainId,
@@ -321,7 +381,15 @@ function constructKeplrChainConfig(values: any): KeplrChainConfig {
       average: values.gasPriceStepAverage,
       high: values.gasPriceStepHigh,
     },
+    features: features,
   };
+}
+
+interface FeaturesConfig {
+  featuresStargate: boolean;
+  featuresIBC: boolean;
+  featuresCosmWasm: boolean;
+  featuresSecretWasm: boolean;
 }
 
 export default AddChainForm;

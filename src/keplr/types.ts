@@ -10,6 +10,7 @@ export interface KeplrChainConfig {
   feeCurrencies?: Currency[];
   coinType?: number;
   gasPriceStep?: GasPriceStep;
+  features?: string[];
 }
 
 export interface Bech32Config {

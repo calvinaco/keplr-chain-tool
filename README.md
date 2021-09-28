@@ -2,6 +2,8 @@
 
 Add Cosmos based chain to Keplr browser extension at ease
 
+Live version: https://calvinaco.github.io/keplr-chain-tool/
+
 ## Supported Chain
 
 The application is shipped with the quick add button for the following chains;

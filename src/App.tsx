@@ -4,6 +4,8 @@ import { AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
 import './App.css';
 import AddChainButton from './AddChainButton';
 import { Cronostestnet_338_2 } from './chain/cronostestnet_338-2';
+import { Cronosmainnet_25_1 } from './chain/cronosmainnet_25_1';
+import { Cronostestnet_338_3 } from './chain/cronostestnet_338-3';
 import { Testnet_Croeseid_4 } from './chain/testnet-croeseid-4';
 import AddChainForm from './AddChainForm';
 
@@ -31,6 +33,8 @@ function App() {
           title="Quick Add Chains"
         / >
         <ul className="ChainList">
+          <li><AddChainButton network={Cronosmainnet_25_1} /></li>
+          <li><AddChainButton network={Cronostestnet_338_3} /></li>
           <li><AddChainButton network={Cronostestnet_338_2} /></li>
           <li><AddChainButton network={Testnet_Croeseid_4} /></li>
         </ul> 

@@ -30,6 +30,7 @@ export interface Currency {
   coinDenom?: string;
   coinMinimalDenom?: string;
   coinDecimals?: number;
+  coinGeckoId?: string;
 }
 
 export interface GasPriceStep {

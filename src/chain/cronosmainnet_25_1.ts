@@ -6,9 +6,9 @@ export const Cronosmainnet_25_1: KeplrChainConfig = {
   // The name of the chain to be displayed to the user.
   chainName: "Cronos",
   // RPC endpoint of the chain.
-  rpc: "https://rpc-cronos.crypto.org",
+  rpc: "https://rpc.cronos.org",
   // REST endpoint of the chain.
-  rest: "https://rest-cronos.crypto.org",
+  rest: "https://rest.cronos.org",
   // Staking coin information
   stakeCurrency: {
     // Coin denomination to be displayed to the user.

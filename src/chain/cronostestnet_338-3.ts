@@ -6,9 +6,9 @@ export const Cronostestnet_338_3: KeplrChainConfig = {
   // The name of the chain to be displayed to the user.
   chainName: "Cronos Testnet 3",
   // RPC endpoint of the chain.
-  rpc: "https://cronos-testnet-3.crypto.org:26657",
+  rpc: "https://rpc-t3.cronos.org",
   // REST endpoint of the chain.
-  rest: "https://cronos-testnet-3.crypto.org:1317",
+  rest: "https://rest-t3.cronos.org",
   // Staking coin information
   stakeCurrency: {
     // Coin denomination to be displayed to the user.
@@ -87,9 +87,9 @@ export const Cronostestnet_338_3: KeplrChainConfig = {
   // Currently, Keplr doesn't support dynamic calculation of the gas prices based on on-chain data.
   // Make sure that the gas prices are higher than the minimum gas prices accepted by chain validators and RPC/REST endpoint.
   gasPriceStep: {
-    low: 5000000000000,
-    average: 5000000000000,
-    high: 5000000000000,
+    low: 10000000000000,
+    average: 11000000000000,
+    high: 15000000000000,
   },
   features: ["stargate", "ibc-transfer"],
 };

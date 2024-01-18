@@ -4,7 +4,7 @@ export const Testnet_Croeseid_4: KeplrChainConfig = {
   // Chain-id of the Cosmos SDK chain.
   chainId: "testnet-croeseid-4",
   // The name of the chain to be displayed to the user.
-  chainName: "Crypto.org Chain Croeseid-4",
+  chainName: "Cronos PoS Testnet Croeseid-4",
   // RPC endpoint of the chain.
   rpc: "https://testnet-croeseid-4.crypto.org:26657",
   // REST endpoint of the chain.
